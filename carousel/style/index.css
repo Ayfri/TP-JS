@@ -1,0 +1,86 @@
+:root {
+	--button-active-color: hsl(0, 0%, 30%);
+	--point-active-color: hsl(0, 0%, 80%);
+	--background-color: hsl(0, 0%, 10%);
+	--button-color: hsl(0, 0%, 20%);
+	--point-color: hsl(0, 0%, 55%);
+	--image-height: 40vw;
+	--button-hover-color: hsl(0, 0%, 25%);
+	--point-hover-color: hsl(0, 0%, 90%);
+	--point-size: 25px;
+	--button-width: 80px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+.carousel {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 4rem;
+	width: 100vw;
+}
+
+.carousel-image {
+	border-radius: 5px;
+	height: var(--image-height);
+	object-fit: fill;
+	opacity: 0;
+	width: 0;
+	transition: opacity 0.5s, width 0.5s;
+}
+
+.carousel-image.active {
+	width: 75vw;
+	opacity: 1;
+}
+
+.btn {
+	background-color: var(--button-color);
+	border: none;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+	height: var(--image-height);
+	transition: background-color 0.15s;
+	width: var(--button-width);
+}
+
+.btn:hover {
+	background-color: var(--button-hover-color);
+}
+
+.btn:active {
+	background-color: var(--button-active-color);
+}
+
+.points {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.point {
+	background-color: var(--point-color);
+	border-radius: 50%;
+	cursor: pointer;
+	height: var(--point-size);
+	margin: 20px;
+	transition: all 0.3s;
+	width: var(--point-size);
+}
+
+.point.active {
+	background-color: var(--point-active-color);
+}
+
+.point:hover {
+	background-color: var(--point-hover-color);
+}
