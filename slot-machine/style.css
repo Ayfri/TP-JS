@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+:root {
+	--background-color: #1d1f21;
+	--text-color: #e5e9ed;
+}
+
+body {
+	background-color: var(--background-color);
+	color: var(--text-color);
+	font-size: 16px;
+	font-weight: 400;
+	height: 100vh;
+	line-height: 1.5;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	width: 100vw;
+}
+
+.btn {
+	background-color: transparent;
+	border: var(--color) solid 1px;
+	border-radius: 10px;
+	color: var(--color);
+	cursor: pointer;
+	display: inline-block;
+	font-size: 2rem;
+	margin: 10rem 3rem;
+	overflow: hidden;
+	padding: 1rem 1.8rem;
+	position: relative;
+	transition: padding 0.5s;
+	user-select: none;
+	vertical-align: top;
+}
+
+.btn:hover {
+	background-color: var(--color);
+	color: var(--background-color);
+}
+
+.btn[data-text]:hover {
+	padding-left: var(--padding-left);
+	padding-right: var(--padding-right);
+}
+
+.btn[data-text]:after {
+	content: attr(data-text);
+	height: 100%;
+	left: var(--text-left, 20%);
+	opacity: 0;
+	position: absolute;
+	transform: translate3d(-200%, 0, 0);
+	transform-origin: 100% 50%;
+	transition: opacity .1s cubic-bezier(0.76, 0, 0.24, 1);
+	width: 100%;
+}
+
+.btn[data-text]:hover:after {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
+	transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1), opacity .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.reset {
+	--color: #CB101B;
+	bottom: 5vh;
+	--padding-left: 1rem;
+	--text-left: 30%;
+	margin: 0;
+	position: fixed;
+	--padding-right: 3.5rem;
+	right: 5vw;
+}
+
+.reset:after {
+	bottom: -15%;
+}
+
+.slots {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.border {
+	border-radius: 1.5rem;
+	box-shadow: gold 0 0 8px 5px inset, gold 0 0 0 8px;
+	margin: 1.5rem;
+	outline: gold solid 1px;
+	padding: 20px;
+}
+
+.slot-item {
+	align-items: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: flex;
+	height: 10rem;
+	justify-content: center;
+	width: 10rem;
+}
+
+
+.bets {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 10px;
+}
+
+.bet {
+	--color: gold;
+	--padding-left: 1rem;
+	--padding-right: 5rem;
+}
+
+.bet.cancel {
+	--color: #CB101B;
+	animation: shake 0.5s infinite;
+}
+
+.not-enough {
+	animation: not-enough 0.8s forwards;
+	font-family: 'Koulen', sans-serif;
+	font-size: 2rem;
+	margin: 0;
+	position: absolute;
+	text-align: center;
+	top: 65vh;
+	width: 100%;
+}
+
+@keyframes shake {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	10% {
+		transform: translate3d(-1px, 0, 0);
+	}
+	20% {
+
+		transform: translate3d(2px, 0, 0);
+	}
+	30% {
+		transform: translate3d(-2px, 0, 0);
+	}
+	40% {
+		transform: translate3d(2px, 0, 0);
+	}
+	50% {
+		transform: translate3d(-2px, 0, 0);
+	}
+	60% {
+		transform: translate3d(2px, 0, 0);
+	}
+	70% {
+		transform: translate3d(-2px, 0, 0);
+	}
+	80% {
+		transform: translate3d(2px, 0, 0);
+	}
+	90% {
+		transform: translate3d(-2px, 0, 0);
+	}
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.play {
+	font-family: 'Koulen', sans-serif;
+	font-size: 5rem;
+}
+
+.play ~ .slot {
+	display: none;
+}
+
+.play {
+	position: relative;
+	top: -3.5rem;
+}
+
+.slot-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	overflow: hidden;
+}
+
+.slot {
+	background-size: contain;
+	height: 10rem;
+	position: relative;
+	width: 10rem;
+}
+
+.slot:first-child {
+}
+
+.money {
+	align-items: center;
+	color: gold;
+	display: flex;
+	font-family: 'Koulen', monospace;
+	font-size: 3rem;
+	gap: 1rem;
+	justify-content: center;
+	margin: 3rem 0;
+	height: 3rem;
+}
+
+.money-wrappers {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.money-wrapper {
+	display: inline-block;
+	height: 1em;
+	line-height: 1em;
+	overflow: hidden;
+	text-align: center;
+	width: 0.5em;
+}
+
+.money-number {
+	position: relative;
+}
+
+@keyframes spin {
+	0% {
+		top: 0;
+	}
+	50% {
+		top: -5em;
+	}
+	100% {
+		top: -9em;
+	}
+}
+
+.animate {
+	animation: spin 0.2s infinite;
+}
+
+.gain-wrapper {
+	align-items: center;
+	color: gold;
+	display: flex;
+	flex-direction: row;
+	font-family: 'Koulen', monospace;
+	font-size: 2rem;
+	gap: 10px;
+	height: 3rem;
+	justify-content: center;
+	opacity: 0;
+	position: relative;
+}
+
+.gain {
+	margin: 0;
+}
+
+.gain-wrapper.active {
+	animation: gain .5s;
+}
+
+@keyframes gain {
+	0% {
+		bottom: 0;
+		opacity: 0;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		bottom: 1rem;
+		opacity: 0;
+	}
+}
+
+@keyframes not-enough {
+	0% {
+		top: 65vh;
+		opacity: 0;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		top: 58vh;
+		opacity: 0;
+	}
+}
