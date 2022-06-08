@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<script src="weather.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<script crossorigin="anonymous" src="https://kit.fontawesome.com/74fed0e2b5.js"></script>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="search">
+				<form class="form">
+					<input maxlength="40" name="search" placeholder="Search..." type="text">
+					<button class="search-icon" name="submit" type="submit">
+						<i class="fas fa-search"></i>
+					</button>
+				</form>
+			</div>
+		</nav>
+		<div class="results">
+			<div class="error hidden"></div>
+			<span class="loading hidden"></span>
+		</div>
+	</body>
+</html>
