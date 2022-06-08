@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+
+:root {
+	--background-color: hsl(200, 6%, 14%);
+	--button-color: hsl(200, 80%, 50%);
+	--button-hover-color: hsl(200, 80%, 60%);
+	--text-color: hsl(0, 0%, 92%);
+	--button-text-color: hsl(0, 0%, 100%);
+	--background-color-card: hsl(200, 6%, 10%);
+}
+
+* {
+	color: var(--text-color);
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+.title {
+	font-size: 3rem;
+	margin: 2rem;
+	text-align: center;
+}
+
+.questions, .results {
+	margin: 2rem;
+	background-color: var(--background-color-card);
+	padding: 1rem;
+	border-radius: 20px;
+}
+
+.question-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+.answers {
+	align-items: center;
+	display: flex;
+	margin-bottom: 1rem;
+}
+
+.answer {
+	margin-right: 0.25rem;
+}
+
+.answer-label {
+	margin-right: 1rem;
+}
+
+.submit {
+	position: relative;
+	right: 0;
+	color: var(--button-text-color);
+	background-color: var(--button-color);
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 10px;
+	font-size: 1.25rem;
+}
+
+.submit:hover {
+	cursor: pointer;
+	background-color: var(--button-hover-color);
+}
+
+.result, .stats {
+	padding: 1rem;
+}
+
+.result h2 {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.hide {
+	display: none;
+}
