@@ -1,0 +1,54 @@
+body {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+}
+
+.container {
+	background-image: url('resources/mask.png'), url('resources/bg-exo2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+	z-index: 10;
+}
+
+.side {
+	align-items: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	/*background-position: center;*/
+	display: flex;
+	flex-direction: column;
+	flex-grow: 100;
+	justify-content: center;
+	z-index: 20;
+}
+
+.left {
+	background-image: url('resources/left-part.png');
+	background-position: right;
+}
+
+.right {
+	background-image: url('resources/right-part.png');
+	background-position: left;
+}
+
+.image-l {
+	background-image: url('resources/seq-a.png');
+	height: 390px;
+	overflow-y: hidden;
+	width: 301px;
+}
+
+.image-r {
+	background-image: url('resources/seq-b.png');
+	height: 320px;
+	overflow-y: hidden;
+	width: 203px;
+}
