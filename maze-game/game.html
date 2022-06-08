@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Game - A Maze Game</title>
+		<script defer src="scripts/game.js"></script>
+		<script src="scripts/leaderboard.js"></script>
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="before-play">
+			<label for="name">Enter your name</label>
+			<input autocomplete="off" id="name" maxlength="64" minlength="1" placeholder="Player" required type="text">
+			<button class="btn" id="start">Start</button>
+		</div>
+		
+		<div class="game hidden">
+			<div class="dummy"></div>
+			<div class="flow-column">
+				<p class="player-name"></p>
+				<canvas id="game"></canvas>
+				<p class="level"></p>
+				<p class="timer">0:00.00</p>
+			</div>
+			
+			<div class="game-buttons">
+				<button class="btn restart">Restart</button>
+				<button class="btn change-user">Change User</button>
+			</div>
+		</div>
+		
+		<div class="themes-wrapper">
+			<h3 class="themes-title">Themes</h3>
+			<ul class="themes">
+				<li class="theme selected" data-theme="default">Default</li>
+				<li class="theme" data-theme="dark">Dark</li>
+				<li class="theme" data-theme="black">Black</li>
+				<li class="theme" data-theme="flat">Flat</li>
+				<li class="theme" data-theme="bold">Bold</li>
+				<li class="theme" data-theme="big">Big</li>
+			</ul>
+		</div>
+		
+		<div class="leaderboard">
+			<h3 class="leaderboard-title">Leaderboard</h3>
+			<ol class="leaderboard-list"></ol>
+		</div>
+	</body>
+</html>
